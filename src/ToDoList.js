@@ -10,6 +10,12 @@ function ToDoList(){
   const syoteKayttaja = (event) => {
     setDesc({...desc, [event.target.name]: event.target.value});
   };
+  function deleteButton(index){
+    const filtered = todos.filter((desc, i) => i !== index);
+    
+    setTodos(filtered);
+  }
+  
   return (
     <div className="App">
       <h1>Add to do:</h1>
@@ -19,10 +25,11 @@ function ToDoList(){
       <table>
         <tbody>
           <tr><th>Description</th><th>Day</th></tr>
-          {todos.map((desc) => 
-           <tr key={desc}>
+          {todos.map((desc,index) => 
+           <tr key={index}>
               <td>{desc.description}</td>
               <td>{desc.day}</td>
+              <td><button onClick={()=>deleteButton(index)}>Delete</button></td>
            </tr>
           )}
         </tbody>
