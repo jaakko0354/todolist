@@ -42,6 +42,9 @@ function App(){
     }
 
   }
+  const clearButton=()=>{
+    setTodos([]);
+  }
   
   return (
     <div className="App">
@@ -54,21 +57,22 @@ function App(){
       <h1>Add to do:</h1>
       <Stack spacing={2} direction='row' justifyContent="center" alignItems="center"> 
       
-        <TextField label="Description" variant='standard' name='description' onChange={syoteKayttaja}/>
+        <TextField label="Description" value={desc.description} variant='standard' name='description' onChange={syoteKayttaja}/>
         <TextField
           id="date"
           label="Date"
           type="date"
-          
+          value={desc.date}
           InputLabelProps={{
             shrink: true,
           }}
           name='day'
           onChange={syoteKayttaja}
         />
-        <TextField label="Priority" variant='standard' name='priority' onChange={syoteKayttaja}/>
+        <TextField label="Priority" value={desc.priority} variant='standard' name='priority' onChange={syoteKayttaja}/>
           <Button startIcon={<Add></Add>} variant='contained' onClick={addToDo}>Add</Button>  
           <Button startIcon={<Delete></Delete>} variant='contained' color='error' onClick={deleteButton}>Delete</Button>  
+          <Button startIcon={<Delete></Delete>} variant='contained' color='error' onClick={clearButton}>Clear list</Button>  
         </Stack>
 
         <div className="ag-theme-material" style ={{height:'800px', width:'40%', margin:'auto'}}>

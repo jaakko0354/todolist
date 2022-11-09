@@ -9,11 +9,10 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.11",
     "@mui/x-date-pickers": "^5.0.5",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "ag-grid-community": "^28.2.0",
     "ag-grid-react": "^28.2.0",
+    "date-fns": "^2.29.3",
     "moment": "^2.29.4",
     "moment-jalaali": "^0.9.6",
     "react": "^18.2.0",
@@ -44,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "typescript": "^4.8.4"
   }
 }
